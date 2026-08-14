@@ -1,0 +1,66 @@
+/* =========================================================
+   VARIABLES.CSS — LP Studio
+   Todas as cores, fontes e espaçamentos do projeto.
+   Para trocar de cliente/identidade visual, altere SOMENTE este arquivo.
+   ========================================================= */
+
+:root{
+
+  /* ---- Cores base ---- */
+  --color-bg:            #150822;   /* fundo principal — ameixa quase-preto */
+  --color-bg-panel:      #1E0E33;   /* painéis/seções alternadas */
+  --color-bg-elevated:   #271041;   /* cards, elementos elevados */
+
+  /* ---- Cores de marca (holográfico) ---- */
+  --color-primary:       #FF2E88;   /* magenta vibrante — CTA principal */
+  --color-secondary:     #A742F5;   /* violeta elétrico */
+  --color-tertiary:      #47E8FF;   /* ciano — brilho tecnológico */
+  --gradient-holo: linear-gradient(115deg, var(--color-primary) 0%, var(--color-secondary) 50%, var(--color-tertiary) 100%);
+
+  /* ---- Texto ---- */
+  --color-text:          #F6EEFF;   /* texto principal sobre fundo escuro */
+  --color-text-muted:    #C4AEDD;   /* texto secundário */
+  --color-text-inverse:  #150822;   /* texto sobre fundo claro/botão */
+
+  /* ---- Bordas/linhas ---- */
+  --color-border:        rgba(246,238,255,0.14);
+  --color-border-glow:   rgba(255,46,136,0.45);
+
+  /* ---- Tipografia ---- */
+  --font-display: 'Syne', sans-serif;         /* títulos — geométrica, marcante */
+  --font-body:    'Manrope', sans-serif;      /* corpo de texto */
+  --font-accent:  'Space Grotesk', monospace; /* labels, preços, dados técnicos */
+
+  /* ---- Escala tipográfica ---- */
+  --fs-hero:    clamp(2.6rem, 6vw, 5rem);
+  --fs-h2:      clamp(1.9rem, 4vw, 3rem);
+  --fs-h3:      1.4rem;
+  --fs-body:    1rem;
+  --fs-small:   0.85rem;
+  --fs-label:   0.75rem;
+
+  /* ---- Espaçamentos ---- */
+  --space-xs:  8px;
+  --space-sm:  16px;
+  --space-md:  28px;
+  --space-lg:  48px;
+  --space-xl:  88px;
+  --space-2xl: 140px;
+
+  /* ---- Raios e sombras ---- */
+  --radius-sm: 12px;
+  --radius-md: 22px;
+  --radius-lg: 32px;
+  --radius-pill: 999px;
+
+  --shadow-glow: 0 0 40px -8px rgba(255,46,136,0.45);
+  --shadow-elevated: 0 24px 60px -20px rgba(21,8,34,0.7);
+
+  /* ---- Layout ---- */
+  --container-max: 1180px;
+  --gutter: 6vw;
+
+  /* ---- Transições ---- */
+  --ease: cubic-bezier(.22,.9,.32,1);
+  --duration: .35s;
+}

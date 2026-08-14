@@ -1,0 +1,119 @@
+/* =========================================================
+   COMPONENTS.CSS — LP Studio
+   Peças reutilizáveis: botões, cards, badges, inputs.
+   ========================================================= */
+
+/* ---------- Botão ---------- */
+.btn{
+  display:inline-flex; align-items:center; gap:10px;
+  font-family:var(--font-accent);
+  font-size:.92rem; font-weight:500; letter-spacing:.01em;
+  padding:15px 30px;
+  border-radius:var(--radius-pill);
+  border:1px solid transparent;
+  cursor:pointer;
+  transition:transform var(--duration) var(--ease), box-shadow var(--duration) var(--ease), background var(--duration) var(--ease);
+  white-space:nowrap;
+}
+.btn:focus-visible{ outline:2px solid var(--color-tertiary); outline-offset:3px; }
+
+.btn--primary{
+  background:var(--gradient-holo);
+  color:#fff;
+  box-shadow:var(--shadow-glow);
+}
+.btn--primary:hover{ transform:translateY(-2px); box-shadow:0 0 54px -6px rgba(255,46,136,0.6); }
+
+.btn--ghost{
+  background:transparent;
+  color:var(--color-text);
+  border-color:var(--color-border);
+}
+.btn--ghost:hover{ background:rgba(246,238,255,0.06); border-color:rgba(246,238,255,0.3); }
+
+.btn--whats{
+  background:#25D366; color:#0b1a10;
+}
+.btn--whats:hover{ transform:translateY(-2px); }
+
+/* ---------- Eyebrow / label ---------- */
+.eyebrow{
+  display:inline-flex; align-items:center; gap:8px;
+  font-family:var(--font-accent);
+  font-size:var(--fs-label); letter-spacing:.16em; text-transform:uppercase;
+  color:var(--color-tertiary);
+  padding:6px 16px;
+  border:1px solid rgba(71,232,255,0.35);
+  border-radius:var(--radius-pill);
+}
+.eyebrow::before{ content:''; width:6px; height:6px; border-radius:50%; background:var(--color-tertiary); box-shadow:0 0 10px var(--color-tertiary); }
+
+/* ---------- Card holográfico (elemento assinatura) ---------- */
+.holo-card{
+  position:relative;
+  background:var(--color-bg-elevated);
+  border-radius:var(--radius-lg);
+  padding:var(--space-md);
+  overflow:hidden;
+  isolation:isolate;
+}
+.holo-card::before{
+  content:'';
+  position:absolute; inset:0; padding:1.5px; border-radius:inherit;
+  background:var(--gradient-holo);
+  -webkit-mask:linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite:xor; mask-composite:exclude;
+  opacity:.55; transition:opacity var(--duration) var(--ease);
+  z-index:1; pointer-events:none;
+}
+.holo-card::after{
+  content:'';
+  position:absolute; inset:-40%;
+  background:conic-gradient(from 0deg, transparent 0deg, rgba(255,255,255,.08) 40deg, transparent 90deg);
+  animation:holo-sweep 6s linear infinite;
+  opacity:0; transition:opacity var(--duration) var(--ease);
+  z-index:0;
+}
+.holo-card:hover::before{ opacity:1; }
+.holo-card:hover::after{ opacity:1; }
+.holo-card:hover{ transform:translateY(-4px); }
+.holo-card > *{ position:relative; z-index:2; }
+
+@keyframes holo-sweep{ to{ transform:rotate(360deg); } }
+
+/* ---------- Card de serviço ---------- */
+.service-card .icon{
+  width:52px; height:52px; border-radius:var(--radius-sm);
+  display:flex; align-items:center; justify-content:center;
+  font-size:1.5rem;
+  background:linear-gradient(135deg, rgba(255,46,136,.18), rgba(71,232,255,.14));
+  margin-bottom:var(--space-sm);
+}
+.service-card h3{ font-family:var(--font-display); font-size:var(--fs-h3); margin-bottom:8px; }
+.service-card p{ color:var(--color-text-muted); font-size:var(--fs-small); line-height:1.55; margin-bottom:18px; }
+.service-card .price-row{
+  display:flex; align-items:center; justify-content:space-between;
+  border-top:1px solid var(--color-border); padding-top:14px;
+}
+.service-card .price{ font-family:var(--font-accent); font-weight:700; font-size:1.05rem; color:var(--color-tertiary); }
+.service-card .book-link{ font-family:var(--font-accent); font-size:.82rem; color:var(--color-text); }
+.service-card .book-link:hover{ color:var(--color-primary); }
+
+/* ---------- Badge de review ---------- */
+.review-card{
+  background:var(--color-bg-elevated);
+  border:1px solid var(--color-border);
+  border-radius:var(--radius-md);
+  padding:var(--space-md);
+}
+.review-card .stars{ color:var(--color-tertiary); letter-spacing:2px; margin-bottom:12px; }
+.review-card p{ font-size:1.02rem; line-height:1.6; margin-bottom:16px; }
+.review-card .author{ font-family:var(--font-accent); font-size:.82rem; color:var(--color-text-muted); }
+
+/* ---------- Input (formulário de contato, se usado) ---------- */
+.field{
+  width:100%; background:var(--color-bg-panel);
+  border:1px solid var(--color-border); border-radius:var(--radius-sm);
+  padding:14px 16px; color:var(--color-text); font-family:var(--font-body); font-size:.95rem;
+}
+.field:focus{ outline:none; border-color:var(--color-primary); }

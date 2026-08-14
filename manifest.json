@@ -1,0 +1,13 @@
+{
+  "name": "DONADONI Salão de Beleza",
+  "short_name": "DONADONI",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#150822",
+  "theme_color": "#150822",
+  "description": "Salão de beleza em Santo André — cabelo, unhas, estética e maquiagem.",
+  "icons": [
+    { "src": "assets/icons/icon-192.png", "sizes": "192x192", "type": "image/png" },
+    { "src": "assets/icons/icon-512.png", "sizes": "512x512", "type": "image/png" }
+  ]
+}
